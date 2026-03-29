@@ -1,0 +1,13 @@
+# Secrets — never commit these
+.env
+*.session
+*.session-journal
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.pyc
+.DS_Store
+
