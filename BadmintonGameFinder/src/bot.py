@@ -4,10 +4,13 @@ bot.py — Telethon client setup, group/topic resolution, and event handler.
 
 import logging
 from telethon import TelegramClient, events, functions
+from telethon.sessions import StringSession
+
 
 from config import (
     API_ID, API_HASH, ALERT_CHAT,
     WATCH_GROUPS, WATCH_TOPICS, SESSION_FILE,
+    SESSION_STRING
 )
 from filters import is_badminton_post, is_west_singapore
 from parser import format_alert
@@ -103,7 +106,8 @@ def make_handler(client: TelegramClient, watch_ids: set[int]):
 
 async def run():
     """Start the Telethon client and begin listening."""
-    client = TelegramClient(SESSION_FILE, API_ID, API_HASH)
+    session = StringSession(SESSION_STRING) if SESSION_STRING else SESSION_FILE
+    client = TelegramClient(session, API_ID, API_HASH)
 
     await client.start()
     me = await client.get_me()

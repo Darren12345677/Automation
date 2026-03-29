@@ -19,6 +19,7 @@ def _require(key: str) -> str:
 # --- Telegram credentials (required) ---
 API_ID   = int(_require("TELEGRAM_API_ID"))
 API_HASH = _require("TELEGRAM_API_HASH")
+SESSION_STRING = os.environ.get("TELEGRAM_SESSION", "")
 
 # --- Where to send alerts ---
 # "me" = your Saved Messages
