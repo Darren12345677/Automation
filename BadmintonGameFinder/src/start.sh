@@ -1,0 +1,1 @@
+python .\BadmintonGameFinder\src\main.py
