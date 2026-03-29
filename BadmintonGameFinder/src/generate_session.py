@@ -8,19 +8,19 @@ Usage:
 Copy the printed string and paste it into your Railway Variables as TELEGRAM_SESSION.
 """
 
-import asyncio
-from telethon import TelegramClient
-from telethon.sessions import StringSession
-from config import API_ID, API_HASH
+# import asyncio
+# from telethon import TelegramClient
+# from telethon.sessions import StringSession
+# from config import API_ID, API_HASH
 
 
-async def main():
-    async with TelegramClient(StringSession(), API_ID, API_HASH) as client:
-        session_string = client.session.save()
-        print("\n✅ Your session string (copy this into TELEGRAM_SESSION on Railway):\n")
-        print(session_string)
-        print()
+# async def main():
+#     async with TelegramClient(StringSession(), API_ID, API_HASH) as client:
+#         session_string = client.session.save()
+#         print("\n✅ Your session string (copy this into TELEGRAM_SESSION on Railway):\n")
+#         print(session_string)
+#         print()
 
 
-if __name__ == "__main__":
-    asyncio.run(main())
+# if __name__ == "__main__":
+#     asyncio.run(main())
